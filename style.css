@@ -1,0 +1,18 @@
+body{
+    background: antiquewhite;
+}
+
+#title{ 
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#top{
+    margin-top: 15px;
+}
+
+#notes{
+    margin: 10px auto;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
