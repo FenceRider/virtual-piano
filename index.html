@@ -5,6 +5,7 @@
     <meta name="description" content="play a virtual piano">
     <meta name="author" content="Jonah Kulakofsky">
     <meta name="keywords" content="virtual, online, piano, key, note">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="file.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -23,72 +24,19 @@
     <div id="notes" class="container">
         <div class="row">
             <div class="col-sm">
-                <button onClick='playTone(tone["C3"])'> C3 </button>
-                <button onClick='playTone(tone["Db3"])'> C#/Db3 </button>
-                <button onClick='playTone(tone["D3"])'> D3 </button>
-                <button onClick='playTone(tone["Eb3"])'> D#/Eb3 </button>
-                <button onClick='playTone(tone["E3"])'> E3 </button>
-                <button onClick='playTone(tone["F3"])'> F3 </button>
-                <button onClick='playTone(tone["Gb3"])'> F#/Gb3 </button>
-                <button onClick='playTone(tone["G3"])'> G3 </button>
-                <button onClick='playTone(tone["Ab3"])'> G#/Ab3 </button>
-                <button onClick='playTone(tone["A3"])'> A3 </button>
-                <button onClick='playTone(tone["Bb3"])'> A#/Bb3 </button>
-                <button onClick='playTone(tone["B3"])'> B3 </button>
-            </div>
-        </div>
-    </div>
-    <div id="notes" class="container">
-        <div class="row">
-            <div class="col-sm">
-                <button onClick='playTone(tone["C4"])'> C4 </button>
-                <button onClick='playTone(tone["Db4"])'> C#/Db4 </button>
-                <button onClick='playTone(tone["D4"])'> D4 </button>
-                <button onClick='playTone(tone["Eb4"])'> D#/Eb4 </button>
-                <button onClick='playTone(tone["E4"])'> E4 </button>
-                <button onClick='playTone(tone["F4"])'> F4 </button>
-                <button onClick='playTone(tone["Gb4"])'> F#/Gb4 </button>
-                <button onClick='playTone(tone["G4"])'> G4 </button>
-                <button onClick='playTone(tone["Ab4"])'> G#/Ab4 </button>
-                <button onClick='playTone(tone["A4"])'> A4 </button>
-                <button onClick='playTone(tone["Bb4"])'> A#/Bb4 </button>
-                <button onClick='playTone(tone["B4"])'> B4 </button>
-            </div>
-        </div>
-    </div>
-    <div id="notes" class="container">
-        <div class="row">
-            <div class="col-sm">
-                <button onClick='playTone(tone["C5"])'> C5 </button>
-                <button onClick='playTone(tone["Db5"])'> C#/Db5 </button>
-                <button onClick='playTone(tone["D5"])'> D5 </button>
-                <button onClick='playTone(tone["Eb5"])'> D#/Eb5 </button>
-                <button onClick='playTone(tone["E5"])'> E5 </button>
-                <button onClick='playTone(tone["F5"])'> F5 </button>
-                <button onClick='playTone(tone["Gb5"])'> F#/Gb5 </button>
-                <button onClick='playTone(tone["G5"])'> G5 </button>
-                <button onClick='playTone(tone["Ab5"])'> G#/Ab5 </button>
-                <button onClick='playTone(tone["A5"])'> A5 </button>
-                <button onClick='playTone(tone["Bb5"])'> A#/Bb5 </button>
-                <button onClick='playTone(tone["B5"])'> B5 </button>
-            </div>
-        </div>
-    </div>
-    <div id="notes" class="container">
-        <div class="row">
-            <div class="col-sm">
-                <button onClick='playTone(tone["C6"])'> C6 </button>
-                <button onClick='playTone(tone["Db6"])'> C#/Db6 </button>
-                <button onClick='playTone(tone["D6"])'> D6 </button>
-                <button onClick='playTone(tone["Eb6"])'> D#/Eb6 </button>
-                <button onClick='playTone(tone["E6"])'> E6 </button>
-                <button onClick='playTone(tone["F6"])'> F6 </button>
-                <button onClick='playTone(tone["Gb6"])'> F#/Gb6 </button>
-                <button onClick='playTone(tone["G6"])'> G6 </button>
-                <button onClick='playTone(tone["Ab6"])'> G#/Ab6 </button>
-                <button onClick='playTone(tone["A6"])'> A6 </button>
-                <button onClick='playTone(tone["Bb6"])'> A#/Bb6 </button>
-                <button onClick='playTone(tone["B6"])'> B6 </button>
+                <button class="white" onClick='playTone(tone["C5"])'> C </button>
+                <button class="black" onClick='playTone(tone["Db"])'> C#/Db </button>
+                <button class="white" onClick='playTone(tone["D"])'> D </button>
+                <button class="black" onClick='playTone(tone["Eb"])'> D#/Eb </button>
+                <button class="white" onClick='playTone(tone["E"])'> E </button>
+                <button class="white" onClick='playTone(tone["F"])'> F </button>
+                <button class="black" onClick='playTone(tone["Gb"])'> F#/Gb </button>
+                <button class="white" onClick='playTone(tone["G"])'> G </button>
+                <button class="black" onClick='playTone(tone["Ab"])'> G#/Ab </button>
+                <button class="white" onClick='playTone(tone["A"])'> A </button>
+                <button class="black" onClick='playTone(tone["Bb"])'> A#/Bb </button>
+                <button class="white" onClick='playTone(tone["B"])'> B </button>
+                <button class="white" onClick='playTone(tone["C6"])'> C </button>
             </div>
         </div>
     </div>
