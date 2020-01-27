@@ -55,3 +55,45 @@ function playSound(waveType, startFreq, endTime) {
         oscillatorNode.stop(context.currentTime + endTime);
     }
 }
+
+document.addEventListener('keypress', (e) => {
+    if (e.code === "Digit2") {
+        playTone(tone["C5"]);
+    }
+    else if (e.code === "KeyW") {
+        playTone(tone["Db"]);
+    }
+    else if (e.code === "Digit3") {
+        playTone(tone["D"]);
+    }
+    else if (e.code === "KeyE") {
+        playTone(tone["Eb"]);
+    }
+    else if (e.code === "Digit4") {
+        playTone(tone["E"]);
+    }
+    else if (e.code === "Digit5") {
+        playTone(tone["F"]);
+    }
+    else if (e.code === "KeyT") {
+        playTone(tone["Gb"]);
+    }
+    else if (e.code === "Digit6") {
+        playTone(tone["G"]);
+    }
+    else if (e.code === "KeyY") {
+        playTone(tone["Ab"]);
+    }
+    else if (e.code === "Digit7") {
+        playTone(tone["A"]);
+    }
+    else if (e.code === "KeyU") {
+        playTone(tone["Bb"]);
+    }
+    else if (e.code === "Digit8") {
+        playTone(tone["B"]);
+    }
+    else if (e.code === "Digit9") {
+        playTone(tone["C6"]);
+    }
+})

@@ -53,3 +53,14 @@ body{
     box-shadow: 0 5px grey;
     transform: translateY(5px);
 }
+
+#instructionSet{
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+}
+
+#instructions{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
