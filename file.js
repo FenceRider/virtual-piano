@@ -160,30 +160,30 @@ function playGame() {
 }
 
 document.addEventListener('keypress', (e) => {
-    if (e.code === "Digit2")
+    if (e.code === "KeyW")
         playTone(tone["C5"]);
-    else if (e.code === "KeyW")
-        playTone(tone["Db5"]);
     else if (e.code === "Digit3")
-        playTone(tone["D5"]);
+        playTone(tone["Db5"]);
     else if (e.code === "KeyE")
-        playTone(tone["Eb5"]);
+        playTone(tone["D5"]);
     else if (e.code === "Digit4")
+        playTone(tone["Eb5"]);
+    else if (e.code === "KeyR")
         playTone(tone["E5"]);
-    else if (e.code === "Digit5")
-        playTone(tone["F5"]);
     else if (e.code === "KeyT")
-        playTone(tone["Gb5"]);
+        playTone(tone["F5"]);
     else if (e.code === "Digit6")
-        playTone(tone["G5"]);
+        playTone(tone["Gb5"]);
     else if (e.code === "KeyY")
-        playTone(tone["Ab5"]);
+        playTone(tone["G5"]);
     else if (e.code === "Digit7")
-        playTone(tone["A5"]);
+        playTone(tone["Ab5"]);
     else if (e.code === "KeyU")
-        playTone(tone["Bb5"]);
+        playTone(tone["A5"]);
     else if (e.code === "Digit8")
+        playTone(tone["Bb5"]);
+    else if (e.code === "KeyI")
         playTone(tone["B5"]);
-    else if (e.code === "Digit9")
+    else if (e.code === "KeyO")
         playTone(tone["C6"]);
 })
