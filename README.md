@@ -3,5 +3,6 @@ VIRTUAL PIANO
 Created on January 23, 2020 by Jonah Kulakofsky
 
 Virtual piano where you can click a note and it will play the corresponding sound.\
-Further design updates and implementations to come.\
+Includes a mini game where you guess an unknown pitch and it keeps score.\
+Further updates and bug fixes to come.\
 Works and sounds best on chrome.
