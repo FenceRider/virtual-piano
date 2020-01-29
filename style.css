@@ -89,3 +89,38 @@ body{
     box-shadow: 0 5px grey;
     transform: translateY(5px);
 }
+
+#inputSection{
+    font-size: 18px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.entry{
+    margin-top: 25px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    text-align: center;
+    font-size: 20px;
+    background-color: greenyellow;
+    color: black;
+    border: none;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 9px grey;
+}
+
+.entry:hover {background-color: grey;}
+
+.entry:active {
+    box-shadow: 0 5px grey;
+    transform: translateY(5px);
+}
+
+#scoreSection{
+    display: flex;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+}

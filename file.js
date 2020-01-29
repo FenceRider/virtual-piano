@@ -156,7 +156,12 @@ function playGame() {
         playTone(tone["B6"]);
     else
         playTone(tone["C7"]);
-    // get next user note and display if correct or not with score
+    let submit = document.getElementById("submit");
+    submit.addEventListener("click", function () {
+        let userNote = document.getElementById("noteRadio");
+        let note = userNote.value;
+        document.getElementById("output").innerText = "test " + note;
+    });
 }
 
 document.addEventListener('keypress', (e) => {

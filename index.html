@@ -65,7 +65,33 @@
     <div id="button" class="container">
         <div class="row">
             <div class="col-sm">
-                <button class="game" onclick='playGame()'>Play Note!</button>
+                <button class="game" onclick='playGame()'>Guess Note!</button>
+            </div>
+        </div>
+    </div>
+    <div id="inputSection" class="container">
+        <div class="row">
+            <div class="col-sm">
+                <input type="radio" id="noteRadio" name="noteOption" value="C"> C<br>
+                <input type="radio" id="noteRadio" name="noteOption" value="Db"> C#/Db<br>
+                <input type="radio" id="noteRadio" name="noteOption" value="D"> D<br>
+                <input type="radio" id="noteRadio" name="noteOption" value="Eb"> D#/Eb<br>
+                <input type="radio" id="noteRadio" name="noteOption" value="E"> E<br>
+                <input type="radio" id="noteRadio" name="noteOption" value="F"> F<br>
+                <input type="radio" id="noteRadio" name="noteOption" value="Gb"> F#/Gb<br>
+                <input type="radio" id="noteRadio" name="noteOption" value="G"> G<br>
+                <input type="radio" id="noteRadio" name="noteOption" value="Ab"> G#/Ab<br>
+                <input type="radio" id="noteRadio" name="noteOption" value="A"> A<br>
+                <input type="radio" id="noteRadio" name="noteOption" value="Bb"> A#/Bb<br>
+                <input type="radio" id="noteRadio" name="noteOption" value="B"> B<br>
+                <button class="entry" id="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div id="scoreSection" class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h5 id="output"></h5>
             </div>
         </div>
     </div>
