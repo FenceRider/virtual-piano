@@ -233,6 +233,7 @@ function comparePitches(pitch) {
             missed++;
         document.getElementById("correctDisplay").innerHTML = correct;
         document.getElementById("missedDisplay").innerHTML = missed;
+        document.getElementById("inputDisplay").innerHTML = pitch;
         document.getElementById("noteDisplay").innerHTML = guessCompare;
         guessed = true;
         randomNote();
