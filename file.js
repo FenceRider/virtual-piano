@@ -1,46 +1,34 @@
+$(document).ready(function () {
+    $('.white , .black').on('click', function (event) {
+        let pitch = $(event.currentTarget).attr('tone');
+        playTone(tone[pitch]);
+        let pitchNoNum = $(event.currentTarget).attr('pitch');
+        comparePitches(pitchNoNum);
+    });
+
+    $('.game').on('click', function (event) {
+        playTone(tone[guess]);
+        guessed = false;
+    });
+});
+
 var AudioContext = window.AudioContext || window.webkitAudioContext;
 var context = new AudioContext();
 var o = null;
 var g = null;
+let guess;
+let guessCompare;
+var guessed = true;
+let correct = 0;
+let missed = 0;
 
 var tone = {
-    'C4': 261.63,
-    'Db4': 277.18,
-    'D4': 293.66,
-    'Eb4': 311.13,
-    'E4': 329.63,
-    'F4': 349.23,
-    'Gb4': 369.99,
-    'G4': 392.00,
-    'Ab4': 415.30,
-    'A4': 440.00,
-    'Bb4': 466.16,
-    'B4': 493.88,
-    'C5': 523.25,
-    'Db5': 554.37,
-    'D5': 587.33,
-    'Eb5': 622.25,
-    'E5': 659.26,
-    'F5': 698.46,
-    'Gb5': 739.99,
-    'G5': 783.99,
-    'Ab5': 830.61,
-    'A5': 880.00,
-    'Bb5': 932.33,
-    'B5': 987.77,
-    'C6': 1046.50,
-    'Db6': 1108.73,
-    'D6': 1174.66,
-    'Eb6': 1244.51,
-    'E6': 1318.51,
-    'F6': 1396.91,
-    'Gb6': 1479.98,
-    'G6': 1567.98,
-    'Ab6': 1661.22,
-    'A6': 1760.00,
-    'Bb6': 1864.66,
-    'B6': 1975.53,
-    'C7': 2093.00,
+    'C4': 261.63, 'Db4': 277.18, 'D4': 293.66, 'Eb4': 311.13, 'E4': 329.63, 'F4': 349.23, 'Gb4': 369.99,
+    'G4': 392.00, 'Ab4': 415.30, 'A4': 440.00, 'Bb4': 466.16, 'B4': 493.88, 'C5': 523.25, 'Db5': 554.37,
+    'D5': 587.33, 'Eb5': 622.25, 'E5': 659.26, 'F5': 698.46, 'Gb5': 739.99, 'G5': 783.99, 'Ab5': 830.61,
+    'A5': 880.00, 'Bb5': 932.33, 'B5': 987.77, 'C6': 1046.50, 'Db6': 1108.73, 'D6': 1174.66, 'Eb6': 1244.51,
+    'E6': 1318.51, 'F6': 1396.91, 'Gb6': 1479.98, 'G6': 1567.98, 'Ab6': 1661.22, 'A6': 1760.00, 'Bb6': 1864.66,
+    'B6': 1975.53, 'C7': 2093.00,
 }
 
 playTone = (frequency, type, duration) => {
@@ -80,115 +68,173 @@ function playSound(waveType, startFreq, endTime) {
     }
 }
 
-function playGame() {
+document.addEventListener('keypress', (e) => {
+    if (e.code === "KeyW") {
+        playTone(tone["C5"]);
+        comparePitches("C");
+    }
+    else if (e.code === "Digit3") {
+        playTone(tone["Db5"]);
+        comparePitches("C#/Db");
+    }
+    else if (e.code === "KeyE") {
+        playTone(tone["D5"]);
+        comparePitches("D");
+    }
+    else if (e.code === "Digit4") {
+        playTone(tone["Eb5"]);
+        comparePitches("D#/Eb");
+    }
+    else if (e.code === "KeyR") {
+        playTone(tone["E5"]);
+        comparePitches("E");
+    }
+    else if (e.code === "KeyT") {
+        playTone(tone["F5"]);
+        comparePitches("F");
+    }
+    else if (e.code === "Digit6") {
+        playTone(tone["Gb5"]);
+        comparePitches("F#/Gb");
+    }
+    else if (e.code === "KeyY") {
+        playTone(tone["G5"]);
+        comparePitches("G");
+    }
+    else if (e.code === "Digit7") {
+        playTone(tone["Ab5"]);
+        comparePitches("G#/Ab");
+    }
+    else if (e.code === "KeyU") {
+        playTone(tone["A5"]);
+        comparePitches("A");
+    }
+    else if (e.code === "Digit8") {
+        playTone(tone["Bb5"]);
+        comparePitches("A#/Bb");
+    }
+    else if (e.code === "KeyI") {
+        playTone(tone["B5"]);
+        comparePitches("B");
+    }
+    else if (e.code === "KeyO") {
+        playTone(tone["C6"]);
+        comparePitches("C");
+    }
+})
+
+function randomNote() {
     let rand = Math.floor((Math.random() * 37) + 1);
     if (rand == 1)
-        playTone(tone["C4"]);
+        guess = "C4";
     else if (rand == 2)
-        playTone(tone["Db4"]);
+        guess = "Db4";
     else if (rand == 3)
-        playTone(tone["D4"]);
+        guess = "D4";
     else if (rand == 4)
-        playTone(tone["Eb4"]);
+        guess = "Eb4";
     else if (rand == 5)
-        playTone(tone["E4"]);
+        guess = "E4";
     else if (rand == 6)
-        playTone(tone["F4"]);
+        guess = "F4";
     else if (rand == 7)
-        playTone(tone["Gb4"]);
+        guess = "Gb4";
     else if (rand == 8)
-        playTone(tone["G4"]);
+        guess = "G4";
     else if (rand == 9)
-        playTone(tone["Ab4"]);
+        guess = "Ab4";
     else if (rand == 10)
-        playTone(tone["A4"]);
+        guess = "A4";
     else if (rand == 11)
-        playTone(tone["Bb4"]);
+        guess = "Bb4";
     else if (rand == 12)
-        playTone(tone["B4"]);
+        guess = "B4";
     else if (rand == 13)
-        playTone(tone["C5"]);
+        guess = "C5";
     else if (rand == 14)
-        playTone(tone["Db5"]);
+        guess = "Db5";
     else if (rand == 15)
-        playTone(tone["D5"]);
+        guess = "D5";
     else if (rand == 16)
-        playTone(tone["Eb5"]);
+        guess = "Eb5";
     else if (rand == 17)
-        playTone(tone["E5"]);
+        guess = "E5";
     else if (rand == 18)
-        playTone(tone["F5"]);
+        guess = "F5";
     else if (rand == 19)
-        playTone(tone["Gb5"]);
+        guess = "Gb5";
     else if (rand == 20)
-        playTone(tone["G5"]);
+        guess = "G5";
     else if (rand == 21)
-        playTone(tone["Ab5"]);
+        guess = "Ab5";
     else if (rand == 22)
-        playTone(tone["A5"]);
+        guess = "A5";
     else if (rand == 23)
-        playTone(tone["Bb5"]);
+        guess = "Bb5";
     else if (rand == 24)
-        playTone(tone["B5"]);
+        guess = "B5";
     else if (rand == 25)
-        playTone(tone["C6"]);
+        guess = "C6";
     else if (rand == 26)
-        playTone(tone["Db6"]);
+        guess = "Db6";
     else if (rand == 27)
-        playTone(tone["D6"]);
+        guess = "D6";
     else if (rand == 28)
-        playTone(tone["Eb6"]);
+        guess = "Eb6";
     else if (rand == 29)
-        playTone(tone["E6"]);
+        guess = "E6";
     else if (rand == 30)
-        playTone(tone["F6"]);
+        guess = "F6";
     else if (rand == 31)
-        playTone(tone["Gb6"]);
+        guess = "Gb6";
     else if (rand == 32)
-        playTone(tone["G6"]);
+        guess = "G6";
     else if (rand == 33)
-        playTone(tone["Ab6"]);
+        guess = "Ab6";
     else if (rand == 34)
-        playTone(tone["A6"]);
+        guess = "A6";
     else if (rand == 35)
-        playTone(tone["Bb6"]);
+        guess = "Bb6";
     else if (rand == 36)
-        playTone(tone["B6"]);
+        guess = "B6";
     else
-        playTone(tone["C7"]);
-    let submit = document.getElementById("submit");
-    submit.addEventListener("click", function () {
-        let userNote = document.getElementById("noteRadio");
-        let note = userNote.value;
-        document.getElementById("output").innerText = "test " + note;
-    });
+        guess = "C7";
+    if (guess == "C4" || guess == "C5" || guess == "C6" || guess == "C7")
+        guessCompare = "C";
+    else if (guess == "Db4" || guess == "Db5" || guess == "Db6")
+        guessCompare = "C#/Db";
+    else if (guess == "D4" || guess == "D5" || guess == "D6")
+        guessCompare = "D";
+    else if (guess == "Eb4" || guess == "Eb5" || guess == "Eb6")
+        guessCompare = "D#/Eb";
+    else if (guess == "E4" || guess == "E5" || guess == "E6")
+        guessCompare = "E";
+    else if (guess == "F4" || guess == "F5" || guess == "F6")
+        guessCompare = "F";
+    else if (guess == "Gb4" || guess == "Gb5" || guess == "Gb6")
+        guessCompare = "F#/Gb";
+    else if (guess == "G4" || guess == "G5" || guess == "G6")
+        guessCompare = "G";
+    else if (guess == "Ab4" || guess == "Ab5" || guess == "Ab6")
+        guessCompare = "G#/Ab";
+    else if (guess == "A4" || guess == "A5" || guess == "A6")
+        guessCompare = "A";
+    else if (guess == "Bb4" || guess == "Bb5" || guess == "Bb6")
+        guessCompare = "A#/Bb";
+    else
+        guessCompare = "B";
 }
 
-document.addEventListener('keypress', (e) => {
-    if (e.code === "KeyW")
-        playTone(tone["C5"]);
-    else if (e.code === "Digit3")
-        playTone(tone["Db5"]);
-    else if (e.code === "KeyE")
-        playTone(tone["D5"]);
-    else if (e.code === "Digit4")
-        playTone(tone["Eb5"]);
-    else if (e.code === "KeyR")
-        playTone(tone["E5"]);
-    else if (e.code === "KeyT")
-        playTone(tone["F5"]);
-    else if (e.code === "Digit6")
-        playTone(tone["Gb5"]);
-    else if (e.code === "KeyY")
-        playTone(tone["G5"]);
-    else if (e.code === "Digit7")
-        playTone(tone["Ab5"]);
-    else if (e.code === "KeyU")
-        playTone(tone["A5"]);
-    else if (e.code === "Digit8")
-        playTone(tone["Bb5"]);
-    else if (e.code === "KeyI")
-        playTone(tone["B5"]);
-    else if (e.code === "KeyO")
-        playTone(tone["C6"]);
-})
+function comparePitches(pitch) {
+    if (guessed == false) {
+        if (guessCompare == pitch)
+            correct++;
+        else
+            missed++;
+        document.getElementById("correctDisplay").innerHTML = correct;
+        document.getElementById("missedDisplay").innerHTML = missed;
+        document.getElementById("noteDisplay").innerHTML = guessCompare;
+        guessed = true;
+        randomNote();
+    }
+}

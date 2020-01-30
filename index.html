@@ -2,18 +2,23 @@
 <html>
 
 <head>
-    <meta name="description" content="play a virtual piano">
+    <meta name="description" content="play a virtual piano and a guessing mini game to test your pitch accuracy">
     <meta name="author" content="Jonah Kulakofsky">
-    <meta name="keywords" content="virtual, online, piano, key, note">
+    <meta name="keywords" content="virtual, online, piano, key, note, game, guess, pitch">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="file.js"></script>
+    <!-- jquery cdn minified -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- bootstrap css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css" \>
+    <script src="file.js"></script>
     <title>Virtual Piano</title>
 </head>
 
 <body>
+    <script>randomNote()</script>
     <div id="top" class="container">
         <div class="row">
             <div id="title" class="col-sm">
@@ -24,19 +29,19 @@
     <div id="notes" class="container">
         <div class="row">
             <div class="col-sm">
-                <button class="white" onClick='playTone(tone["C5"])'> C </button>
-                <button class="black" onClick='playTone(tone["Db5"])'> C#/Db </button>
-                <button class="white" onClick='playTone(tone["D5"])'> D </button>
-                <button class="black" onClick='playTone(tone["Eb5"])'> D#/Eb </button>
-                <button class="white" onClick='playTone(tone["E5"])'> E </button>
-                <button class="white" onClick='playTone(tone["F5"])'> F </button>
-                <button class="black" onClick='playTone(tone["Gb5"])'> F#/Gb </button>
-                <button class="white" onClick='playTone(tone["G5"])'> G </button>
-                <button class="black" onClick='playTone(tone["Ab5"])'> G#/Ab </button>
-                <button class="white" onClick='playTone(tone["A5"])'> A </button>
-                <button class="black" onClick='playTone(tone["Bb5"])'> A#/Bb </button>
-                <button class="white" onClick='playTone(tone["B5"])'> B </button>
-                <button class="white" onClick='playTone(tone["C6"])'> C </button>
+                <button class="white" pitch="C" tone="C5"> C </button>
+                <button class="black" pitch="C#/Db" tone="Db5"> C#/Db </button>
+                <button class="white" pitch="D" tone="D5"> D </button>
+                <button class="black" pitch="D#/Eb" tone="Eb5"> D#/Eb </button>
+                <button class="white" pitch="E" tone="E5"> E </button>
+                <button class="white" pitch="F" tone="F5"> F </button>
+                <button class="black" pitch="F#/Gb" tone="Gb5"> F#/Gb </button>
+                <button class="white" pitch="G" tone="G5"> G </button>
+                <button class="black" pitch="G#/Ab" tone="Ab5"> G#/Ab </button>
+                <button class="white" pitch="A" tone="A5"> A </button>
+                <button class="black" pitch="A#/Bb" tone="Bb5"> A#/Bb </button>
+                <button class="white" pitch="B" tone="B5"> B </button>
+                <button class="white" pitch="C" tone="C6"> C </button>
             </div>
         </div>
     </div>
@@ -65,33 +70,18 @@
     <div id="button" class="container">
         <div class="row">
             <div class="col-sm">
-                <button class="game" onclick='playGame()'>Guess Note!</button>
-            </div>
-        </div>
-    </div>
-    <div id="inputSection" class="container">
-        <div class="row">
-            <div class="col-sm">
-                <input type="radio" id="noteRadio" name="noteOption" value="C"> C<br>
-                <input type="radio" id="noteRadio" name="noteOption" value="Db"> C#/Db<br>
-                <input type="radio" id="noteRadio" name="noteOption" value="D"> D<br>
-                <input type="radio" id="noteRadio" name="noteOption" value="Eb"> D#/Eb<br>
-                <input type="radio" id="noteRadio" name="noteOption" value="E"> E<br>
-                <input type="radio" id="noteRadio" name="noteOption" value="F"> F<br>
-                <input type="radio" id="noteRadio" name="noteOption" value="Gb"> F#/Gb<br>
-                <input type="radio" id="noteRadio" name="noteOption" value="G"> G<br>
-                <input type="radio" id="noteRadio" name="noteOption" value="Ab"> G#/Ab<br>
-                <input type="radio" id="noteRadio" name="noteOption" value="A"> A<br>
-                <input type="radio" id="noteRadio" name="noteOption" value="Bb"> A#/Bb<br>
-                <input type="radio" id="noteRadio" name="noteOption" value="B"> B<br>
-                <button class="entry" id="submit">Submit</button>
+                <button class="game">Guess Note!</button>
             </div>
         </div>
     </div>
     <div id="scoreSection" class="container">
         <div class="row">
             <div class="col-sm">
-                <h5 id="output"></h5>
+                <h5>
+                    Correct: <span id="correctDisplay"></span><br />
+                    &nbspMissed: <span id="missedDisplay"></span><br />
+                    &nbspAnswer: <span id="noteDisplay"></span>
+                </h5>
             </div>
         </div>
     </div>
