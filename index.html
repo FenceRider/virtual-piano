@@ -29,19 +29,19 @@
     <div id="notes" class="container">
         <div class="row">
             <div class="col-sm">
-                <button class="white" pitch="C" tone="C5"> C </button>
-                <button class="black" pitch="C#/Db" tone="Db5"> C#/Db </button>
-                <button class="white" pitch="D" tone="D5"> D </button>
-                <button class="black" pitch="D#/Eb" tone="Eb5"> D#/Eb </button>
-                <button class="white" pitch="E" tone="E5"> E </button>
-                <button class="white" pitch="F" tone="F5"> F </button>
-                <button class="black" pitch="F#/Gb" tone="Gb5"> F#/Gb </button>
-                <button class="white" pitch="G" tone="G5"> G </button>
-                <button class="black" pitch="G#/Ab" tone="Ab5"> G#/Ab </button>
-                <button class="white" pitch="A" tone="A5"> A </button>
-                <button class="black" pitch="A#/Bb" tone="Bb5"> A#/Bb </button>
-                <button class="white" pitch="B" tone="B5"> B </button>
-                <button class="white" pitch="C" tone="C6"> C </button>
+                <button class="white" pitch="C" tone="C1"> C </button>
+                <button class="black" pitch="C#/Db" tone="Db"> C#/Db </button>
+                <button class="white" pitch="D" tone="D"> D </button>
+                <button class="black" pitch="D#/Eb" tone="Eb"> D#/Eb </button>
+                <button class="white" pitch="E" tone="E"> E </button>
+                <button class="white" pitch="F" tone="F"> F </button>
+                <button class="black" pitch="F#/Gb" tone="Gb"> F#/Gb </button>
+                <button class="white" pitch="G" tone="G"> G </button>
+                <button class="black" pitch="G#/Ab" tone="Ab"> G#/Ab </button>
+                <button class="white" pitch="A" tone="A"> A </button>
+                <button class="black" pitch="A#/Bb" tone="Bb"> A#/Bb </button>
+                <button class="white" pitch="B" tone="B"> B </button>
+                <button class="white" pitch="C" tone="C2"> C </button>
             </div>
         </div>
     </div>
@@ -49,6 +49,7 @@
         <div class="row">
             <div class="col-sm">
                 <h5 id="instructions">
+                    Octave (4 to 6): <span id="octaveDisplay"></span><br />
                     Either click on a note or use key commands below:<br />
                     W - C<br />
                     3 - C#/Db<br />
@@ -62,7 +63,9 @@
                     U - A<br />
                     8 - A#/Bb<br />
                     I - B<br />
-                    O - C
+                    O - C<br />
+                    Q - Decrease Octave<br />
+                    P - Increase Octave
                 </h5>
             </div>
         </div>
