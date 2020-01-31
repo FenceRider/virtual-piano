@@ -77,7 +77,8 @@ body{
     font-family: 'Courier New', Courier, monospace;
     background-color: greenyellow;
     color: black;
-    border: none;
+    border: 1px solid black;
+    padding: 5px;
     border-radius: 10px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
